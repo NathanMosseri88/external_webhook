@@ -26,7 +26,10 @@ def external_hook():
 		server_name = data.get('Server Name')
 
 		print(f'{server_name} run with {username}')
+
+		# returns response and success code back to delegation webhook
 		return jsonify(f'{server_name} - {username} reached external'), 200
+
 	except Exception as e:
 		return f'external Error: {str(e)}', 500
 
